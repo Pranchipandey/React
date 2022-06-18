@@ -41,7 +41,7 @@ handlePrevClick = async () => {
  
 handleNextClick = async () => {
     console.log("Next");
-   if (!this.state.page + 1 > Math.ceil(this.state.totalResults / this.props.pageSize)) 
+   if (!(this.state.page + 1 > Math.ceil(this.state.totalResults/this.props.pageSize))) 
    {
         let url = `https://newsapi.org/v2/top-headlines?country=in&apikey=94f4d426b1964d30b7a57fc19d5cbf65&page=${this.state.page + 1}&pageSize=${this.props.pageSize}`;
        this.setState({loading:true});
@@ -75,8 +75,8 @@ handleNextClick = async () => {
       </div>
       <div className="container d-flex justify-content-between">
     <button disabled={this.state.page<=1} type="button" class="btn btn-dark" onClick={this.handlePrevClick}> &larr; Previous</button>
-    <button type="button" class="btn btn-dark" onClick={this.handleNextClick}>Next &rarr;</button>
-</div> {/*disabled={this.state.page+1 >Math.ceil(this.state.totalResults/this.props.pageSize)}*/}
+    <button disabled={this.state.page+1 >Math.ceil(this.state.totalResults/this.props.pageSize)}type="button" class="btn btn-dark" onClick={this.handleNextClick}>Next &rarr;</button>
+</div>
    </div>
   
     )
