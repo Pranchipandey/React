@@ -7,7 +7,7 @@ export default class NewsItem extends Component {
     return (
       
       <div>
-     <div className="card">
+     <div className="card" style={{width:"350px"}}>
       <span class="position-absolute top-0 translate-middle badge rounded-pill bg-danger" style={{left: '80%', zIndex: '1'}}> {this.props.source}
                         </span>
       <img src={!this.props.imageUrl?"https://www.pinkvilla.com/files/styles/fbimagesection/public/horoscope-june-18-2022-social.jpg?itok=MtqP_D8X":this.props.imageUrl} class="card-img-top" alt="..." />
